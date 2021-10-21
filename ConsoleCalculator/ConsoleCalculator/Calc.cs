@@ -50,5 +50,25 @@ namespace ConsoleCalculator
             }
             return numberDouble;
         }
+
+        static public bool OperatorInput(out string mathOperator)
+        {
+            List<string> operatorWithSecondArgument = new List<string> { "+", "-", "*", "/", "%", "^" };
+            List<string> operatorWithOneArgument = new List<string> { "sqrt", "!" };
+            while (true)
+            {
+                mathOperator = Console.ReadLine();
+                if (operatorWithSecondArgument.Contains(mathOperator))
+                {
+                    return true;
+                }
+                else if (operatorWithOneArgument.Contains(mathOperator))
+                {
+                    return false;
+                }
+                Console.WriteLine();
+                Console.Write("Wrong input! Try again: ");
+            }
+        }
     }
 }
