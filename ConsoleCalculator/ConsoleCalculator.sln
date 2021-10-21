@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.31613.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleCalculator", "ConsoleCalculator\ConsoleCalculator.csproj", "{79CE686C-1A36-444B-B9E5-28851AB376F5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{EB1BC914-E24B-4374-AA43-01C74F02620D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleCalculator.UnitTests", "ConsoleCalculator.UnitTests\ConsoleCalculator.UnitTests.csproj", "{E7F78951-FA97-4EB1-92B7-1ED69B8560FB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +19,16 @@ Global
 		{79CE686C-1A36-444B-B9E5-28851AB376F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79CE686C-1A36-444B-B9E5-28851AB376F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79CE686C-1A36-444B-B9E5-28851AB376F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7F78951-FA97-4EB1-92B7-1ED69B8560FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7F78951-FA97-4EB1-92B7-1ED69B8560FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7F78951-FA97-4EB1-92B7-1ED69B8560FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7F78951-FA97-4EB1-92B7-1ED69B8560FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E7F78951-FA97-4EB1-92B7-1ED69B8560FB} = {EB1BC914-E24B-4374-AA43-01C74F02620D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DC727AF8-7BB4-472D-9526-74B535937CD8}
