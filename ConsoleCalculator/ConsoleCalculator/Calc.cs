@@ -23,6 +23,11 @@ namespace ConsoleCalculator
             return x * y;
         }
 
+        static public double RestOfDivide(double x, double y)
+        {
+            return x % y;
+        }
+
         static public double Divide(double x, double y)
         {
             while (y == 0)
