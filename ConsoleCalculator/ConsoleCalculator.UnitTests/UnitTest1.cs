@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using ConsoleCalculator;
 
 namespace ConsoleCalculator.UnitTests
 {
@@ -9,10 +10,64 @@ namespace ConsoleCalculator.UnitTests
         {
         }
 
-        [Test]
-        public void Test1()
+        [TestCase(10, 2, 12)]
+        [TestCase(-14, 8, -6)]
+        [TestCase(0, 3, 3)]
+        [TestCase(1, 1, 2)]
+        public void AdditionalTest(double firstArgument, double secondArgument, double expectedResult)
         {
-            Assert.Pass();
+            double actualResult = Calc.Sum(firstArgument, secondArgument);
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [TestCase(10, 2, 8)]
+        [TestCase(-10, 8, -18)]
+        [TestCase(0, 0, 0)]
+        [TestCase(1, 1, 0)]
+        public void SubstractionTest(double firstArgument, double secondArgument, double expectedResult)
+        {
+            double actualResult = Calc.Minus(firstArgument, secondArgument);
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [TestCase(10, 2, 20)]
+        [TestCase(-10, 8, -80)]
+        [TestCase(0, 0, 0)]
+        [TestCase(1, 1, 1)]
+        public void MultiplyTest(double firstArgument, double secondArgument, double expectedResult)
+        {
+            double actualResult = Calc.Multiply(firstArgument, secondArgument);
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [TestCase(10, 3, 1)]
+        [TestCase(-10, 8, -2)]
+        [TestCase(0, 1, 0)]
+        [TestCase(1, 1, 0)]
+        public void RestOfDivideTest(double firstArgument, double secondArgument, double expectedResult)
+        {
+            double actualResult = Calc.RestOfDivide(firstArgument, secondArgument);
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [TestCase(10, 2, 5)]
+        [TestCase(-10, -10, 1)]
+        [TestCase(0, 1, 0)]
+        [TestCase(1, 1, 1)]
+        public void DivideTest(double firstArgument, double secondArgument, double expectedResult)
+        {
+            double actualResult = Calc.Divide(firstArgument, secondArgument);
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+        
+        [TestCase(9, 3)]
+        [TestCase(4, 2)]
+        [TestCase(0, 0)]
+        [TestCase(1, 1)]
+        public void SqrtTest(double firstArgument, double expectedResult)
+        {
+            double actualResult = Calc.Sqrt(firstArgument);
+            Assert.AreEqual(expectedResult, actualResult);
         }
     }
 }
