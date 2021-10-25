@@ -69,5 +69,24 @@ namespace ConsoleCalculator.UnitTests
             double actualResult = Calc.Sqrt(firstArgument);
             Assert.AreEqual(expectedResult, actualResult);
         }
+
+        [TestCase(1, 1)]
+        [TestCase(7, 5040)]
+        [TestCase(20, 2432902008176640000)]
+        public void FactorialTest(double firstArgument, double expectedResult)
+        {
+            double actualResult = Calc.Factorial(firstArgument);
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [TestCase(0, 0)]
+        [TestCase(-2, 4)]
+        [TestCase(8, 64)]
+        [TestCase(1, 1)]
+        public void PowerTest(double firstArgument, double expectedResult)
+        {
+            double actualResult = Calc.Power(firstArgument);
+            Assert.AreEqual(expectedResult, actualResult);
+        }
     }
 }

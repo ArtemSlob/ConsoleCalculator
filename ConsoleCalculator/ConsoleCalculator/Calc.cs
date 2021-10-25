@@ -29,23 +29,37 @@ namespace ConsoleCalculator
         {
             while (y == 0)
             {
-                Console.WriteLine("Can not divide by zero");
-                return 0;
+                Console.Write("The number should not be 0. Enter second number again: ");
+                y = Calc.NumInput();
+                Console.WriteLine();
             }
             return x / y;
         }
 
         static public double Sqrt(double num)
         {
+            while(num < 0)
+            {
+                Console.Write("The number should not be negative. Enter number again: ");
+                num = Calc.NumInput();
+                Console.WriteLine();
+            }
+            if (num == 0)
+            {
+                return 0;
+            }
             double root = 1;
             int i = 0;
             while (true)
             {
                 i = i + 1;
                 root = (num / root + root) / 2;
-                if (i == num + 1) { break; }
+                if (i == num + 1)
+                { 
+                    break;
+                }
             }
-            return root;
+            return Math.Round(root, 8);
         }
 
         static public double Factorial(double num)
@@ -53,8 +67,9 @@ namespace ConsoleCalculator
             long factorial = 1;
             while (!(num >= 1 && num <= 20))
             {
-                Console.WriteLine("Enter a number in the range 1-20 to calculate the factorial:");
+                Console.Write("Enter a number in the range 1-20 to calculate the factorial: ");
                 num = Calc.NumInput();
+                Console.WriteLine();
             }
             for (int i = 1; i <= num; i++)
             {
