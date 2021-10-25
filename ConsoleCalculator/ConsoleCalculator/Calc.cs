@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleCalculator
 {
@@ -13,7 +10,7 @@ namespace ConsoleCalculator
             return x + y;
         }
 
-        static public double Minus(double x, double y)
+        static public double Subtract(double x, double y)
         {
             return x - y;
         }
@@ -40,7 +37,35 @@ namespace ConsoleCalculator
 
         static public double Sqrt(double num)
         {
-            return Math.Sqrt(num);
+            double root = 1;
+            int i = 0;
+            while (true)
+            {
+                i = i + 1;
+                root = (num / root + root) / 2;
+                if (i == num + 1) { break; }
+            }
+            return root;
+        }
+
+        static public double Factorial(double num)
+        {
+            long factorial = 1;
+            while (!(num >= 1 && num <= 20))
+            {
+                Console.WriteLine("Enter a number in the range 1-20 to calculate the factorial:");
+                num = Calc.NumInput();
+            }
+            for (int i = 1; i <= num; i++)
+            {
+                factorial *= i;
+            }
+            return factorial;
+        }
+
+        static public double Power(double num)
+        {
+            return num * num;
         }
 
         static public double NumInput()
@@ -59,7 +84,7 @@ namespace ConsoleCalculator
         static public bool OperatorInput(out string mathOperator)
         {
             List<string> operatorWithSecondArgument = new List<string> { "+", "-", "*", "/", "%", "^" };
-            List<string> operatorWithOneArgument = new List<string> { "sqrt", "!" };
+            List<string> operatorWithOneArgument = new List<string> { "sqrt", "!", "pow" };
             while (true)
             {
                 mathOperator = Console.ReadLine();
