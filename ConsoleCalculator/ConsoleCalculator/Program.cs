@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleCalculator
 {
@@ -14,10 +10,11 @@ namespace ConsoleCalculator
             Console.Write("Input first operand: ");
             double firstOperand = Calc.NumInput();
             Console.WriteLine();
-            Console.Write("Input operator (+ - * / % sqrt !): ");
+            Console.Write("Input operator (+ - * / % sqrt ! pow): ");
             bool isSecondNeed = Calc.OperatorInput(out string mathOperator);
+            Console.WriteLine();
             double secondOperand = 0;
-            if (isSecondNeed = true)
+            if (isSecondNeed == true)
             {
                 Console.WriteLine("Input second operand: ");
                 secondOperand = Calc.NumInput();
@@ -30,7 +27,7 @@ namespace ConsoleCalculator
                     result = Calc.Sum(firstOperand, secondOperand);
                     break;
                 case "-":
-                    result = Calc.Minus(firstOperand, secondOperand);
+                    result = Calc.Subtract(firstOperand, secondOperand);
                     break;
                 case "*":
                     result = Calc.Multiply(firstOperand, secondOperand);
@@ -41,8 +38,14 @@ namespace ConsoleCalculator
                 case "%":
                     result = Calc.RestOfDivide(firstOperand, secondOperand);
                     break;
-                case "Sqrt":
+                case "sqrt":
                     result = Calc.Sqrt(firstOperand);
+                    break;
+                case "!":
+                    result = Calc.Factorial(firstOperand);
+                    break;
+                case "pow":
+                    result = Calc.Power(firstOperand);
                     break;
                 default:
                     Console.WriteLine("No such operator!");

@@ -26,7 +26,7 @@ namespace ConsoleCalculator.UnitTests
         [TestCase(1, 1, 0)]
         public void SubstractionTest(double firstArgument, double secondArgument, double expectedResult)
         {
-            double actualResult = Calc.Minus(firstArgument, secondArgument);
+            double actualResult = Calc.Subtract(firstArgument, secondArgument);
             Assert.AreEqual(expectedResult, actualResult);
         }
 
@@ -59,7 +59,7 @@ namespace ConsoleCalculator.UnitTests
             double actualResult = Calc.Divide(firstArgument, secondArgument);
             Assert.AreEqual(expectedResult, actualResult);
         }
-        
+
         [TestCase(9, 3)]
         [TestCase(4, 2)]
         [TestCase(0, 0)]
