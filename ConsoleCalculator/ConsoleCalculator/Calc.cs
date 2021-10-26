@@ -22,40 +22,57 @@ namespace ConsoleCalculator
 
         static public double RestOfDivide(double x, double y)
         {
+            if (y == 0)
+            {
+                throw new ArgumentException("Division by 0 is not possible.");
+            }
             return x % y;
         }
 
         static public double Divide(double x, double y)
         {
-            while (y == 0)
+            if (y == 0)
             {
-                Console.WriteLine("Can not divide by zero");
-                return 0;
+                throw new ArgumentException("Division by 0 is not possible.");
             }
             return x / y;
         }
 
         static public double Sqrt(double num)
         {
+            if (num < 0)
+            {
+                throw new ArgumentException("A negative root is not possible.");
+            }
+            if (num == 0)
+            {
+                return 0;
+            }
             double root = 1;
             int i = 0;
             while (true)
             {
                 i = i + 1;
                 root = (num / root + root) / 2;
-                if (i == num + 1) { break; }
+                if (i == num + 1)
+                {
+                    break;
+                }
             }
-            return root;
+            return Math.Round(root, 8);
         }
 
         static public double Factorial(double num)
         {
-            long factorial = 1;
-            while (!(num >= 1 && num <= 20))
+            if (num < 1)
             {
-                Console.WriteLine("Enter a number in the range 1-20 to calculate the factorial:");
-                num = Calc.NumInput();
+                throw new ArgumentException("The factorial of a negative number and 0 is not possible.");
             }
+            if (num > 20)
+            {
+                throw new ArgumentException("The calculator can calculate the factorial of a number less than 21.");
+            }
+            long factorial = 1;
             for (int i = 1; i <= num; i++)
             {
                 factorial *= i;
