@@ -22,27 +22,41 @@ namespace ConsoleCalculator
 
         static public double RestOfDivide(double x, double y)
         {
+            if (y == 0)
+            {
+                throw new ArgumentException("Division by 0 is not possible.");
+            }
             return x % y;
         }
 
         static public double Divide(double x, double y)
         {
-            while (y == 0)
+            if (y == 0)
             {
+<<<<<<< HEAD
                 Console.Write("The number should not be 0. Enter second number again: ");
                 y = Calc.NumInput();
                 Console.WriteLine();
+=======
+                throw new ArgumentException("Division by 0 is not possible.");
+>>>>>>> main
             }
             return x / y;
         }
 
         static public double Sqrt(double num)
         {
+<<<<<<< HEAD
             while(num < 0)
             {
                 Console.Write("The number should not be negative. Enter number again: ");
                 num = Calc.NumInput();
                 Console.WriteLine();
+=======
+            if (num < 0)
+            {
+                throw new ArgumentException("A negative root is not possible.");
+>>>>>>> main
             }
             if (num == 0)
             {
@@ -55,7 +69,11 @@ namespace ConsoleCalculator
                 i = i + 1;
                 root = (num / root + root) / 2;
                 if (i == num + 1)
+<<<<<<< HEAD
                 { 
+=======
+                {
+>>>>>>> main
                     break;
                 }
             }
@@ -64,13 +82,21 @@ namespace ConsoleCalculator
 
         static public double Factorial(double num)
         {
-            long factorial = 1;
-            while (!(num >= 1 && num <= 20))
+            if (num < 1)
             {
+<<<<<<< HEAD
                 Console.Write("Enter a number in the range 1-20 to calculate the factorial: ");
                 num = Calc.NumInput();
                 Console.WriteLine();
+=======
+                throw new ArgumentException("The factorial of a negative number and 0 is not possible.");
+>>>>>>> main
             }
+            if (num > 20)
+            {
+                throw new ArgumentException("The calculator can calculate the factorial of a number less than 21.");
+            }
+            long factorial = 1;
             for (int i = 1; i <= num; i++)
             {
                 factorial *= i;
