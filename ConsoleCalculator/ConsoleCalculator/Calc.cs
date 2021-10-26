@@ -33,30 +33,16 @@ namespace ConsoleCalculator
         {
             if (y == 0)
             {
-<<<<<<< HEAD
-                Console.Write("The number should not be 0. Enter second number again: ");
-                y = Calc.NumInput();
-                Console.WriteLine();
-=======
                 throw new ArgumentException("Division by 0 is not possible.");
->>>>>>> main
             }
             return x / y;
         }
 
         static public double Sqrt(double num)
         {
-<<<<<<< HEAD
-            while(num < 0)
-            {
-                Console.Write("The number should not be negative. Enter number again: ");
-                num = Calc.NumInput();
-                Console.WriteLine();
-=======
             if (num < 0)
             {
                 throw new ArgumentException("A negative root is not possible.");
->>>>>>> main
             }
             if (num == 0)
             {
@@ -69,11 +55,7 @@ namespace ConsoleCalculator
                 i = i + 1;
                 root = (num / root + root) / 2;
                 if (i == num + 1)
-<<<<<<< HEAD
-                { 
-=======
                 {
->>>>>>> main
                     break;
                 }
             }
@@ -84,13 +66,7 @@ namespace ConsoleCalculator
         {
             if (num < 1)
             {
-<<<<<<< HEAD
-                Console.Write("Enter a number in the range 1-20 to calculate the factorial: ");
-                num = Calc.NumInput();
-                Console.WriteLine();
-=======
                 throw new ArgumentException("The factorial of a negative number and 0 is not possible.");
->>>>>>> main
             }
             if (num > 20)
             {
